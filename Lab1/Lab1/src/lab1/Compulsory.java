@@ -1,7 +1,7 @@
 package lab1;
 
 public class Compulsory {
-    public void solve(String[] args){
+    public void doCompulsory(String[] args){
         System.out.println("Hello World!");
 
         String[] languages = {
