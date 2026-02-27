@@ -1,5 +1,3 @@
-package lab2;
-
 public class Road {
 
     private String type;

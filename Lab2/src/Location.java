@@ -1,5 +1,3 @@
-package lab2;
-
 public class Location {
 
     private String name;
