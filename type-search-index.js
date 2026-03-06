@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"<Unnamed>","l":"Airport"},{"l":"All Classes and Interfaces","u":"allclasses-index.html","k":"18"},{"p":"<Unnamed>","l":"City"},{"p":"<Unnamed>","l":"Compulsory"},{"p":"<Unnamed>","l":"GasStation"},{"p":"<Unnamed>","l":"Location"},{"p":"<Unnamed>","l":"Problem"},{"p":"<Unnamed>","l":"Road"},{"p":"<Unnamed>","l":"RoadType","k":"9"}];updateSearchResults();

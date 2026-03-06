@@ -1,43 +1,46 @@
+import java.util.Objects;
+
 public class Road {
 
-    private String type;
+    private RoadType type;
     private double length;
-    private double speedLim;
+    private double speedLimit;
     private Location start;
     private Location end;
 
-    public Road(String type, Location start, Location end, double speedLim) {
+    public Road(RoadType type, Location start, Location end, double speedLimit) {
+
         this.type = type;
         this.start = start;
         this.end = end;
-        this.speedLim = speedLim;
+        this.speedLimit = speedLimit;
 
         double dx = start.getX() - end.getX();
         double dy = start.getY() - end.getY();
-        double distance = Math.sqrt(dx * dx + dy * dy);
 
-        this.length = distance;
+        length = Math.sqrt(dx * dx + dy * dy);
     }
-    public String getType() {
-        return type; }
-    public double getLength() {
-        return length; }
-    public double getSpeedLim() {
-        return speedLim; }
     public Location getStart() {
         return start; }
     public Location getEnd() {
         return end; }
 
-    public void setType(String type) {
-        this.type = type; }
-    public void setSpeedLim(double speedLim) {
-        this.speedLim = speedLim; }
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Road road = (Road) o;
+        return Double.compare(length, road.length) == 0 && Double.compare(speedLimit, road.speedLimit) == 0 && type == road.type && Objects.equals(start, road.start) && Objects.equals(end, road.end);
+    }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(type, length, speedLimit, start, end);
+    }
+    @Override
     public String toString() {
-        return "Road {type='" + type + "', start=" + start.getName() +
-                ", end =" + end.getName() + ", length =" + length +
-                ", speed limit =" + speedLim + "}";
+        return "Road " + type +
+                " from " + start.getName() +
+                " to " + end.getName() +
+                " length=" + length;
     }
 }

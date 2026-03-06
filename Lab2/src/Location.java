@@ -1,37 +1,39 @@
-public class Location {
+import java.util.Objects;
+/**
+ * represents a location.
+ */
+public abstract class Location {
 
     private String name;
-    private String type;
     private double x;
     private double y;
 
-    public Location(String name, String type, double x, double y) {
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Location location = (Location) o;
+        return Double.compare(x, location.x) == 0 && Double.compare(y, location.y) == 0 && Objects.equals(name, location.name);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, x, y);
+    }
+    public Location(String name, double x, double y) {
         this.name = name;
-        this.type = type;
         this.x = x;
         this.y = y;
     }
     public String getName() {
         return name; }
-    public String getType() {
-        return type; }
+
     public double getX() {
         return x; }
-    public double getY() {
-        return y; }
 
-    public void setName(String name) {
-        this.name = name; }
-    public void setType(String type) {
-        this.type = type; }
-    public void setX(double x) {
-        this.x = x; }
-    public void setY(double y) {
-        this.y = y; }
+    public double getY() {
+        return y;}
 
     @Override
     public String toString() {
-        return "location{name='" + name + "', type='" + type +
-                "', x=" + x + ", y=" + y + "}";
+        return name + "(" + x + "," + y + ")";
     }
 }
