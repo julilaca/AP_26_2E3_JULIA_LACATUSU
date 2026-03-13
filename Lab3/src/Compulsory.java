@@ -1,27 +1,28 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 public class Compulsory {
-    public static void main(String[] args){
-        List<Profile> network = new ArrayList<>();
 
-        Person julia = new Person ("julia", "01");
-        Person ana = new Person ("ana", "02");
-        Person bia = new Person ("bia", "003");
-        Company bitdef = new Company("Bitdefender", "001");
-        Company amazon = new Company("Amazon", "002");
+    public static void main(String[] args) {
 
-        network.add(julia);
-        network.add(ana);
-        network.add(bia);
-        network.add(bitdef);
-        network.add(amazon);
+        Programmer p1 = new Programmer("julia", "10", "2006", "Java");
+        Designer d1 = new Designer("george", "11", "2005", "Photoshop");
+        Person p2 = new Person("bia", "03", "2000");
 
-        Collections.sort(network);
+        Company c1 = new Company("Amazon", "101", "Tech");
+        Company c2 = new Company("Bitdefender", "100", "Security");
 
-        for(Profile profiles : network){
-            System.out.println(profiles);
-        }
+        p1.addRelationship(d1, "friend");
+        p1.addRelationship(c1, "employee");
+        d1.addRelationship(p1, "friend");
+        c1.addRelationship(p1, "employee");
+        c2.addRelationship(p2, "partner");
+
+        SocialNetwork network = new SocialNetwork();
+
+        network.addProfile(p1);
+        network.addProfile(d1);
+        network.addProfile(p2);
+        network.addProfile(c1);
+        network.addProfile(c2);
+
+        network.printNetwork();
     }
 }

@@ -1,10 +1,31 @@
-public class Person implements Profile, Comparable<Profile> {
-    private String id;
-    private String name;
+import java.util.HashMap;
+import java.util.Map;
 
-    public Person(String name, String id) {
+public class Person implements Profile {
+
+    private String name;
+    private String id;
+    private String birthDate;
+
+    private Map<Profile, String> relationships = new HashMap<>();
+
+    public Person(String name, String id, String birthDate) {
         this.name = name;
         this.id = id;
+        this.birthDate = birthDate;}
+
+    public void addRelationship(Profile p, String relation) {
+        relationships.put(p, relation);}
+
+    public Map<Profile, String> getRelationships() {
+        return relationships;}
+
+    public String getBirthDate() {
+        return birthDate;}
+
+    @Override
+    public int getImportance() {
+        return relationships.size();
     }
 
     @Override
@@ -24,9 +45,6 @@ public class Person implements Profile, Comparable<Profile> {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                '}';
+        return "Person{name='" + name + "', birthDate='" + birthDate + "'}";
     }
 }
