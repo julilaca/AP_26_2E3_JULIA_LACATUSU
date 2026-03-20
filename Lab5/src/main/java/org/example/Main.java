@@ -1,17 +1,42 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import org.example.model.Resource;
+import org.example.repository.Catalog;
+import org.example.exceptions.ResourceException;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+import java.io.File;
+import java.io.IOException;
+import java.awt.Desktop;
+
+public class Main {
+    public static void main(String[] args) {
+        Catalog catalog = new Catalog();
+        Resource doc = new Resource("res1", "testing", "C:/Users/julia/Downloads/testphrase.txt", "2000", "Testing");
+
+        catalog.add(doc);
+        System.out.println(catalog);
+
+        try {
+            open(doc);
+        } catch (ResourceException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+    private static void open(Resource res) throws ResourceException {
+        File file = new File(res.getLocation());
+
+        if (!file.exists()) {
+            throw new ResourceException("file not found");
+        }
+
+        if (!Desktop.isDesktopSupported()) {
+            throw new ResourceException("desktop unsupported");
+        }
+
+        try {
+            Desktop.getDesktop().open(file);
+        } catch (IOException e) {
+            throw new ResourceException("failed to open file");
         }
     }
 }
