@@ -1,42 +1,23 @@
 package org.example;
 
+import org.example.commands.*;
+import org.example.exceptions.ResourceException;
 import org.example.model.Resource;
 import org.example.repository.Catalog;
-import org.example.exceptions.ResourceException;
-
-import java.io.File;
-import java.io.IOException;
-import java.awt.Desktop;
 
 public class Main {
     public static void main(String[] args) {
         Catalog catalog = new Catalog();
-        Resource doc = new Resource("res1", "testing", "C:/Users/julia/Downloads/testphrase.txt", "2000", "Testing");
 
-        catalog.add(doc);
-        System.out.println(catalog);
+        catalog.add(new Resource("123", "julia", "d:/books/programming/", "2026", "testing"));
+        catalog.add(new Resource("456", "julia", "https://testing.com/html/index.html", "2025", "testing2"));
 
         try {
-            open(doc);
+            new ListCommand(catalog).execute();
+            new SaveCommand(catalog, "catalog.txt").execute();
+            new ReportCommand(catalog, "report.html").execute();
         } catch (ResourceException e) {
             System.err.println(e.getMessage());
-        }
-    }
-    private static void open(Resource res) throws ResourceException {
-        File file = new File(res.getLocation());
-
-        if (!file.exists()) {
-            throw new ResourceException("file not found");
-        }
-
-        if (!Desktop.isDesktopSupported()) {
-            throw new ResourceException("desktop unsupported");
-        }
-
-        try {
-            Desktop.getDesktop().open(file);
-        } catch (IOException e) {
-            throw new ResourceException("failed to open file");
         }
     }
 }

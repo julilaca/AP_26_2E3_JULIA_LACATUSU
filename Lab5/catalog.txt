@@ -1,0 +1,2 @@
+Resource{id='123', author='julia', location='d:/books/programming/', year='2026', title='testing'}
+Resource{id='456', author='julia', location='https://testing.com/html/index.html', year='2025', title='testing2'}

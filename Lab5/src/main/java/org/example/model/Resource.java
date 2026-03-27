@@ -1,6 +1,7 @@
 package org.example.model;
+import java.io.Serializable;
 
-public class Resource {
+public class Resource implements Serializable {
     private String id;
     private String author;
     private String location;

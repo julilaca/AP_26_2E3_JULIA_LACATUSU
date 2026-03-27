@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bibliography Report</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Bibliography Catalog</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Year</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <#list resources as res>
+            <tr>
+                <td>${res.id}</td>
+                <td>${res.title}</td>
+                <td>${res.author}</td>
+                <td>${res.year}</td>
+                <td><a href="${res.location}">${res.location}</a></td>
+            </tr>
+            </#list>
+        </tbody>
+    </table>
+</body>
+</html>
