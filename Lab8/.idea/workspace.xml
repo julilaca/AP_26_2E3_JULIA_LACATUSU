@@ -4,22 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a673a31-a4df-4ac5-b1bb-9c88094fe73f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Lab7/src/main/java/lab7/movie_manager/Actor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab7/src/main/java/lab7/movie_manager/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab7/src/main/java/lab7/movie_manager/Genre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab7/src/main/java/lab7/movie_manager/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab7/src/main/java/lab7/movie_manager/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab7/src/main/java/lab7/movie_manager/ResourceNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab7/src/main/java/lab7/movie_manager/client/MovieClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab7/src/main/java/lab7/movie_manager/controller/MovieController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab7/src/main/java/lab7/movie_manager/dao/ActorDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab7/src/main/java/lab7/movie_manager/dao/GenreDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab7/src/main/java/lab7/movie_manager/dao/MovieDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MazeApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab7/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab7/src/main/java/lab7/movie_manager/MovieController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab7/src/main/java/lab7/movie_manager/MovieManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab7/src/main/java/lab7/movie_manager/MovieManagerApplication.java" afterDir="false" />
+    <list default="true" id="a069575f-5937-47b0-aaba-95e7319a1db5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/lab8/Cell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab8/MazeApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab8/MazePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Lab8.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MazeApp.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +28,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="3Cd6QBPo8GZtM3g9usUUYUoRI6y" />
+  <component name="ProjectId" id="3DNtSDaePKOHXskeu7kXVn3XcdV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,23 +41,21 @@
     "Application.MazeApp.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/julia/OneDrive/Desktop/JavaLabs/Lab8",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "kotlin-language-version-configured": "true"
   }
 }]]></component>
   <component name="RunManager">
     <configuration name="MazeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <classpathModifications>
-        <entry path="C:\Users\julia\OneDrive\Desktop\JavaLabs\Lab8" />
-      </classpathModifications>
-      <option name="MAIN_CLASS_NAME" value="MazeApp" />
+      <option name="MAIN_CLASS_NAME" value="lab8.MazeApp" />
       <module name="Lab8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lab8.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -78,12 +68,23 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3a673a31-a4df-4ac5-b1bb-9c88094fe73f" name="Changes" comment="" />
-      <created>1776703080497</created>
+      <changelist id="a069575f-5937-47b0-aaba-95e7319a1db5" name="Changes" comment="" />
+      <created>1778134353460</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1776703080497</updated>
+      <updated>1778134353460</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/lab8/MazeApp.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
