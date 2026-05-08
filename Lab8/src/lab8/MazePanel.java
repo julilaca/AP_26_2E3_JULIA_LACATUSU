@@ -58,7 +58,7 @@ class MazePanel extends JPanel {
         g2d.dispose();
         try {
             ImageIO.write(image, "png", new File(filename));
-            JOptionPane.showMessageDialog(this, "Saved as " + filename);
+            JOptionPane.showMessageDialog(this, "saved as " + filename);
         } catch (IOException ex) {
             ex.printStackTrace();
         }

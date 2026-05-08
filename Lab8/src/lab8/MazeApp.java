@@ -3,6 +3,8 @@ package lab8;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 public class MazeApp extends JFrame {
@@ -38,11 +40,18 @@ public class MazeApp extends JFrame {
         configPanel.add(colsField);
 
         JButton drawButton = new JButton("Draw");
-        drawButton.addActionListener(e -> {
-            int rows = Integer.parseInt(rowsField.getText());
-            int cols = Integer.parseInt(colsField.getText());
-            mazePanel.setMazeSize(rows, cols);
-            pack();
+
+        drawButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                int rows = Integer.parseInt(rowsField.getText());
+                int cols = Integer.parseInt(colsField.getText());
+
+                mazePanel.setMazeSize(rows, cols);
+
+                pack();
+            }
         });
         configPanel.add(drawButton);
 
@@ -60,25 +69,57 @@ public class MazeApp extends JFrame {
         JButton exportButton = new JButton("Export");
         JButton exitButton = new JButton("Exit");
 
-        createButton.addActionListener(e -> mazePanel.randomRemoveWalls());
-        resetButton.addActionListener(e -> mazePanel.resetMaze());
-
-        validateButton.addActionListener(e -> {
-            if (mazePanel.isTraversable()) {
-                JOptionPane.showMessageDialog(this, "traversable");
-            } else {
-                JOptionPane.showMessageDialog(this, "No path found");
+        createButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mazePanel.randomRemoveWalls();
             }
         });
 
+        resetButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mazePanel.resetMaze();
+            }
+        });
 
-        saveButton.addActionListener(e -> mazePanel.saveMaze("maze.dat"));
-        loadButton.addActionListener(e -> mazePanel.loadMaze("maze.dat"));
+        validateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (mazePanel.isTraversable()) {
+                    JOptionPane.showMessageDialog(null, "traversable");
+                } else {
+                    JOptionPane.showMessageDialog(null, "no path found");
+                }
+            }
+        });
+        saveButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mazePanel.saveMaze("maze.txt");
+            }
+        });
 
+        loadButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mazePanel.loadMaze("maze.txt");
+            }
+        });
 
-        exportButton.addActionListener(e -> mazePanel.exportToPNG("maze.png"));
+        exportButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                mazePanel.exportToPNG("maze.png");
+            }
+        });
 
-        exitButton.addActionListener(e -> System.exit(0));
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
 
         controlPanel.add(createButton);
         controlPanel.add(resetButton);
@@ -92,7 +133,7 @@ public class MazeApp extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(MazeApp::new);
+        new MazeApp();
     }
 }
 
