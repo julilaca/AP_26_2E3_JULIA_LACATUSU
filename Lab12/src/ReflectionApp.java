@@ -10,7 +10,7 @@ public class ReflectionApp {
             Object instance = clazz.getDeclaredConstructor().newInstance();
             method.invoke(instance);
         } catch (NoSuchMethodException e) {
-            System.err.println("method run() with no arguments not found.");
+            System.err.println(" run() not found.");
         } catch (Exception e) {
             e.printStackTrace();
         }
